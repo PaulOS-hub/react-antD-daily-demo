@@ -4,6 +4,7 @@ import asyncComponent from '../utils/asyncComponent'
 const Home = asyncComponent(() => import("../components/home"))
 const About = asyncComponent(() => import("../components/about"))
 const Index = asyncComponent(() => import("../App.js"))
+const Login = asyncComponent(() => import("../components/login"))
 const InsertView = asyncComponent(() => import("../components/insertView"))
 
 export default class RouteConfig extends Component {
@@ -12,7 +13,7 @@ export default class RouteConfig extends Component {
         return (
             <HashRouter>
                 <Switch>
-                    <Route path="/" exact component={Index}></Route>
+                    <Route path="/" exact component={Login}></Route>
                     <Route path="/home" component={Home}></Route>
                     <Route path="/about" component={() =>
                         <About>
