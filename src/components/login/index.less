@@ -1,5 +1,22 @@
-.login_form{
-    background-color: #282c34;
-    width: 200px;
-    height: 200px;
+@color: #282c34;
+@whiteColor: #f5f5f5;
+
+.flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_form {
+    background-color: @color;
+    width: 100vw;
+    height: 100vh;
+    .flexcenter;
+
+    .login_form_content {
+        padding: 50px 80px 40px 80px;
+        background-color: @whiteColor;
+        .flexcenter;
+        border-radius: 5px;
+    }
 }

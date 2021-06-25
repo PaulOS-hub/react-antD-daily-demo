@@ -13,7 +13,7 @@ export default class RouteConfig extends Component {
         return (
             <HashRouter>
                 <Switch>
-                    <Route path="/" exact component={Login}></Route>
+                    <Route path="/login" exact component={Login}></Route>
                     <Route path="/home" component={Home}></Route>
                     <Route path="/about" component={() =>
                         <About>
@@ -22,7 +22,7 @@ export default class RouteConfig extends Component {
                         </About>
                     }>
                     </Route>
-                    <Redirect to="/" />
+                    <Redirect to="/login" />
                 </Switch>
             </HashRouter >
         )

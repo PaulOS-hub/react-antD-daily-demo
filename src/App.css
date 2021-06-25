@@ -37,3 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
+.box-content>div:nth-child(2) {
+  flex: 1
+}

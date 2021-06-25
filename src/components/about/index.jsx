@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import { Timeline } from 'antd';
+/**
+ * @BrowserRouter 路由器管理
+ */
+import { Link, BrowserRouter, Route } from 'react-router-dom'
+import Nav1 from '../nav1'
+import Nav2 from '../nav2'
 export default class About extends Component {
     constructor(props) {
         super(props)
@@ -7,31 +13,21 @@ export default class About extends Component {
     render() {
         return (
             <div>
-                <Timeline>
-                    <Timeline.Item color="green">Create a services site 2015-09-01</Timeline.Item>
-                    <Timeline.Item color="green">Create a services site 2015-09-01</Timeline.Item>
-                    <Timeline.Item color="red">
-                        <p>Solve initial network problems 1</p>
-                        <p>Solve initial network problems 2</p>
-                        <p>Solve initial network problems 3 2015-09-01</p>
-                    </Timeline.Item>
-                    <Timeline.Item>
-                        <p>Technical testing 1</p>
-                        <p>Technical testing 2</p>
-                        <p>Technical testing 3 2015-09-01</p>
-                    </Timeline.Item>
-                    <Timeline.Item color="gray">
-                        <p>Technical testing 1</p>
-                        <p>Technical testing 2</p>
-                        <p>Technical testing 3 2015-09-01</p>
-                    </Timeline.Item>
-                    <Timeline.Item color="gray">
-                        <p>Technical testing 1</p>
-                        <p>Technical testing 2</p>
-                        <p>Technical testing 3 2015-09-01</p>
-                    </Timeline.Item>
-                </Timeline>
-                {this.props.children}
+                {/* 123 */}
+                {/* <BrowserRouter>  
+                    路由器管理应该包裹到index.jsx中包裹全局
+                */} 
+                    <Link to="/nav1">Go 1</Link>
+                    <br />
+                    <Link to="/nav2">Go 2</Link>
+                {/* </BrowserRouter> */}
+                <div>
+                    这里是content
+                    {/* <BrowserRouter> */}
+                        <Route path="/nav1" component={Nav1} />
+                        <Route path="/nav2" component={Nav2} />
+                    {/* </BrowserRouter> */}
+                </div>
             </div>
         )
     }

@@ -1,19 +1,27 @@
 import React, { Component } from 'react'
-import { Timeline } from 'antd';
+import Child from './child'
+import LifeCycleDemo from './life'
+import TodoList from './TodoList'
+import NewLifeCycleDemo from './newLife'
+import './index.less'
 export default class Home extends Component {
-    constructor(props) {
-        super(props)
+    // 直接赋值的情况，等于默认给Home组件实例默认state赋值了一个对象
+    state = {
+        arr: [1, 2, 3]
+    }
+    changeArr = () => {
+        this.setState({
+            arr: [1, 2]
+        })
     }
     render() {
+
         return (
-            <div>
-                <Timeline>
-                    <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
-                </Timeline>
-                this is HOME
+            <div className="content" style={{ margin: '200px auto' }}>
+                {/* <Child ></Child>
+                <button onClick={this.changeArr}>修改props</button>
+                <NewLifeCycleDemo arr={this.state.arr} /> */}
+                <TodoList />
             </div>
         )
     }
